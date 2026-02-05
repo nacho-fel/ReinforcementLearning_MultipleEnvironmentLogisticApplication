@@ -2,10 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import torch
 from stable_baselines3 import DQN
-from almacen_1 import WarehouseEnv
+from almacen_3 import WarehouseEnv
 
 # Cargar modelo entrenado
-entorno = "1"
+entorno = "3"
 entornos = {"1": {"random_objects": False, "just_pick": True, "render_mode": "human"},
             "2": {"random_objects": False, "just_pick": False, "render_mode": "human"},
             "3": {"random_objects": True,  "just_pick": False, "render_mode": "human"}}
@@ -101,5 +101,5 @@ def evaluate_agent(model, env, num_episodes=500, render=False):
 
 
 # Evaluar
-rewards, success = evaluate_agent(model, env, num_episodes=100, render=True)
+rewards, success = evaluate_agent(model, env, num_episodes=50, render=True)
 env.close()
